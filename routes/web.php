@@ -12,35 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'ReceipeController@index');
-// Route::get('/', 'HomeController@index');
-
-// // Route::get('/', function () {
-// //     return view('home', [
-// //     	'name' => "Home Page Template"
-// //     ]);
-// //     // return view('home') => with('name', "Home Page Template");
-// // });
-
-// Route::get('/php', 'HomeController@phpPage');
-// // Route::get('/php', function () {
-// //     return view('php', 
-// //     	[
-// //     	"data" => array(
-// //     		'lesson1'=>'this is php lesson1',
-// //     		'lesson2'=> 'this is php lesson2',
-// //     		'lesson3'=> 'this is php lesson3',
-// //     )
-// // ]) ;
-// // });
-// Route::get('/js', 'HomeController@jsPage');
-// Route::get('/js', function () {
-//     return view('js', 
-//     	[
-//     	"data" => array(
-//     		'lesson1'=>'this is JS lesson1',
-//     		'lesson2'=> 'this is JS lesson2',
-//     		'lesson3'=> 'this is JS lesson3',
-//     )
-// ]);
-// });
+// Route::get('receipe', 'ReceipeController@index');
+// Route::get('receipe/create', 'ReceipeController@createReceipeForm');
+// Route::get('receipe/{id}', 'ReceipeController@showDetail');
+// Route::post('receipe', 'ReceipeController@create');
+// Route::get('receipe/{id}/edit', 'ReceipeController@editReceipeForm');
+// Route::patch('receipe/{id}/edit', 'ReceipeController@update');
+// Route::delete()('receipe/{id}/delete', 'ReceipeController@delete');
+Route::resource('receipe','ReceipeController');
