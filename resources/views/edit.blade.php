@@ -18,7 +18,7 @@
 	<form method="POST" action="/receipe/{{ $receipe->id }}">
 		{{ method_field("PATCH") }}
 		{{ csrf_field() }}
-		
+
 		<div class="form-group">
 	    <label>Name</label>
 	    <input type="text" name="name" class="form-control" id="Foodname" value="{{ $receipe -> name }}" required>
@@ -29,10 +29,20 @@
 	    <input type="text" name="ingredients" class="form-control" id="Foodname" value="{{ $receipe -> ingredients }}" required>
 	    </div>
 
-	    <div class="form-group">
+	    <!-- <div class="form-group">
 	    <label>Category</label>
-	    <input type="text" name="category" class="form-control" id="Foodname" value="{{ $receipe -> category }}" required>
-	    </div>
+	    <input type="text" name="category" class="form-control" id="Foodname" value="{{ $receipe -> categories }}" required>
+	    </div> -->
+
+    	<div class="form-group">
+    	<label>Category</label>
+      	<select class="form-control" name="category">
+      		@foreach($category as $value)
+      		<option value="{{$value->id}}" {{ $receipe->categories->id == $value->id ? "selected" : ""}}>{{$value->name}}</option>
+      		@endforeach
+      	</select>
+    	</div>
+
 
 	    <button type="submit" class="btn btn-primary">Add</button>
 	</form>
