@@ -18,6 +18,7 @@
 	<form method="POST" action="/receipe/{{ $receipe->id }}">
 		{{ method_field("PATCH") }}
 		{{ csrf_field() }}
+		
 		<div class="form-group">
 	    <label>Name</label>
 	    <input type="text" name="name" class="form-control" id="Foodname" value="{{ $receipe -> name }}" required>

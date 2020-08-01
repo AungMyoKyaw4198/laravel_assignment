@@ -41,22 +41,6 @@ class ReceipeController extends Controller
         'ingredients' => 'required',
         'category' => 'required',
         ]);
-
-        // $receipe = new Receipe();
-
-        // $receipe->name = request()->name;
-        // $receipe->ingredients = request()->ingredients;
-        // $receipe->category = request()->category;
-
-        // $receipe->save();
-
-        // Receipe::create([
-        //     'name' => request()->name,
-        //     'ingredients' => request()->ingredients,
-        //     'category' => request()->category,
-
-        // ]);
-
         Receipe::create($validatedData);
         return redirect('receipe');
     }

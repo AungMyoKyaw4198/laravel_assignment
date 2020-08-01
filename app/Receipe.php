@@ -9,6 +9,4 @@ class Receipe extends Model
     protected $fillable = [
         'name', 'ingredients', 'category',
     ];
-
-    //protect $guarded =[];
 }
