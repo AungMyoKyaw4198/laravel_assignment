@@ -12,7 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+app()->bind('test', function(){
+	return new \App\test("Somethis just just happened!!");
+});
+
+
 Route::resource('receipe','ReceipeController');
 Route::get('home','HomeController@index');
 Auth::routes();
-

@@ -16,6 +16,15 @@
 
                     <div class="container">
 					<h2>Ingredients Home Page</h2>
+                    @if(session("message"))
+                        <div class="alert alert-success" role="alert">
+                            {{ session("message") }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+                    <script type="text/javascript"></script>
 					<a href="/receipe/create"><button class="btn btn-success">Create</button></a>
 						<br>
 					    @foreach($data as $value)
